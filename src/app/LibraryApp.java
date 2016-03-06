@@ -1,6 +1,8 @@
 package app;
 
 import app.io.Input;
+import app.io.LibraryInput;
+import app.io.LibraryOutput;
 import app.io.Output;
 
 import java.util.Objects;
@@ -33,5 +35,13 @@ public class LibraryApp {
 
     private void exit() {
         this.output.out("Goodbye");
+    }
+
+    public static void main(String[] args) {
+        LibraryInput input = new LibraryInput();
+        LibraryOutput output = new LibraryOutput();
+
+        LibraryApp app = new LibraryApp(output, input);
+        app.start();
     }
 }
