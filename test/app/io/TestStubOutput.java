@@ -18,7 +18,8 @@ public class TestStubOutput {
         assertEquals("Hello world", lastMessage);
     }
 
-    @Test public void testGettingPreviousMessage() {
+    @Test
+    public void testGettingPreviousMessage() {
         // Given
         StubOutput output = new StubOutput();
         output.out("Line one");
@@ -27,10 +28,12 @@ public class TestStubOutput {
 
         // When
         String line1 = output.getLine(0);
+        String line2 = output.getLine(1);
         String lineDoesNotExist = output.getLine(99);
 
         // Then
         assertEquals("Line one", line1);
+        assertEquals("Line two", line2);
         assertEquals(null, lineDoesNotExist);
     }
 }
