@@ -19,10 +19,6 @@ public class StubOutput implements Output {
         return this.messages.get(this.messages.size() - 1);
     }
 
-    public boolean containsMessage(String message) {
-        return this.messages.contains(message);
-    }
-
     public String getLine(int n) {
         try {
             return this.messages.get(n);

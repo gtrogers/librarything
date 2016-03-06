@@ -5,7 +5,6 @@ import app.io.StubOutput;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
 
 public class AppTest {
     @Test
@@ -21,8 +20,8 @@ public class AppTest {
         String lastMessage = stubOutput.getLastMessage();
 
         // Then
-        assertTrue(stubOutput.containsMessage("Welcome to the library thing!"));
-        assertTrue(stubOutput.containsMessage("\t0\tExit"));
+        assertEquals("Welcome to the library thing!", stubOutput.getLine(0));
+        assertEquals("\t0\tExit", stubOutput.getLine(1));
         assertEquals("Goodbye", lastMessage);
     }
 }
