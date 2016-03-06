@@ -9,12 +9,14 @@ public class LibraryApp {
     public Command exit = new Command("Exit", "0");
     public Command printCatalogue = new Command("Print Catalogue", "1");
 
+    private Catalogue catalogue;
     private Input input;
     private Output output;
 
     public LibraryApp(Output output, Input input, Catalogue catalogue) {
         this.output = output;
         this.input = input;
+        this.catalogue = catalogue;
     }
 
     public void start() {
@@ -31,7 +33,7 @@ public class LibraryApp {
                 running = false;
             }
             if (Objects.equals(inputLine, printCatalogue.commandNumber())) {
-                running = false;
+                catalogue.outputCatalogue(this.output);
             }
         }
 
