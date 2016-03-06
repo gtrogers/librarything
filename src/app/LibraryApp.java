@@ -1,6 +1,7 @@
 package app;
 
 import app.io.*;
+import app.items.Book;
 
 import java.util.Objects;
 
@@ -48,6 +49,9 @@ public class LibraryApp {
         LibraryInput input = new LibraryInput();
         LibraryOutput output = new LibraryOutput();
         Catalogue catalogue = new Catalogue();
+
+        catalogue.addItem(new Book("The Importance of Being Earnest", "Oscar Wilde"));
+        catalogue.addItem(new Book("Consider Phlebas", "Ian M Banks"));
 
         LibraryApp app = new LibraryApp(output, input, catalogue);
         app.start();
