@@ -1,7 +1,5 @@
 package app.io;
 
-import app.LibraryApp;
-
 import java.io.PrintStream;
 
 public class LibraryOutput implements Output {

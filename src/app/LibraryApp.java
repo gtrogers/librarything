@@ -11,7 +11,7 @@ public class LibraryApp {
     private Input input;
     private Output output;
 
-    public LibraryApp(Output output, Input input) {
+    public LibraryApp(Output output, Input input, Catalogue catalogue) {
         this.output = output;
         this.input = input;
     }
@@ -22,6 +22,7 @@ public class LibraryApp {
 
         this.output.out("Welcome to the library thing!");
         this.output.out("\t0\tExit");
+        this.output.out("\t1\tPrint Catalogue");
 
         while(running) {
             inputLine = this.input.nextInput();
@@ -40,8 +41,9 @@ public class LibraryApp {
     public static void main(String[] args) {
         LibraryInput input = new LibraryInput();
         LibraryOutput output = new LibraryOutput();
+        Catalogue catalogue = new Catalogue();
 
-        LibraryApp app = new LibraryApp(output, input);
+        LibraryApp app = new LibraryApp(output, input, catalogue);
         app.start();
     }
 }
