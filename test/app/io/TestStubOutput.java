@@ -34,4 +34,20 @@ public class TestStubOutput {
         assertEquals(true, hasMessage);
         assertEquals(false, noMessage);
     }
+
+    @Test public void testGettingPreviousMessage() {
+        // Given
+        StubOutput output = new StubOutput();
+        output.out("Line one");
+        output.out("Line two");
+        output.out("Line three");
+
+        // When
+        String line1 = output.getLine(0);
+        String lineDoesNotExist = output.getLine(99);
+
+        // Then
+        assertEquals("Line one", line1);
+        assertEquals(null, lineDoesNotExist);
+    }
 }

@@ -22,4 +22,13 @@ public class StubOutput implements Output {
     public boolean containsMessage(String message) {
         return this.messages.contains(message);
     }
+
+    public String getLine(int n) {
+        try {
+            return this.messages.get(n);
+        } catch(IndexOutOfBoundsException e) {
+            System.err.println("No input for line " + n);
+            return null;
+        }
+    }
 }
