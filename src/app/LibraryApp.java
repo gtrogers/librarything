@@ -1,13 +1,14 @@
 package app;
 
-import app.io.Input;
-import app.io.LibraryInput;
-import app.io.LibraryOutput;
-import app.io.Output;
+import app.io.*;
 
 import java.util.Objects;
 
 public class LibraryApp {
+
+    public Command exit = new Command("Exit", "0");
+    public Command printCatalogue = new Command("Print Catalogue", "1");
+
     private Input input;
     private Output output;
 
@@ -21,12 +22,15 @@ public class LibraryApp {
         String inputLine;
 
         this.output.out("Welcome to the library thing!");
-        this.output.out("\t0\tExit");
-        this.output.out("\t1\tPrint Catalogue");
+        this.output.out(exit.commandDescription());
+        this.output.out(printCatalogue.commandDescription());
 
         while(running) {
             inputLine = this.input.nextInput();
-            if (Objects.equals(inputLine, "0")) {
+            if (Objects.equals(inputLine, exit.commandNumber())) {
+                running = false;
+            }
+            if (Objects.equals(inputLine, printCatalogue.commandNumber())) {
                 running = false;
             }
         }

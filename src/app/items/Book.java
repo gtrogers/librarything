@@ -12,6 +12,6 @@ public class Book {
     }
 
     public String description() {
-        return this.title + "\t" + this.author;
+        return "- - " + this.title + "\t" + this.author;
     }
 }

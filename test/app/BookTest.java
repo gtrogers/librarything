@@ -1,3 +1,5 @@
+package app;
+
 import app.items.Book;
 import org.junit.Test;
 
@@ -13,6 +15,6 @@ public class BookTest {
         String desc = book.description();
 
         // Then
-        assertEquals("Harry Potter and the Philosopher's Stone\tJ K Rowling", desc);
+        assertEquals("- - Harry Potter and the Philosopher's Stone\tJ K Rowling", desc);
     }
 }
