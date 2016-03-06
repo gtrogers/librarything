@@ -18,4 +18,8 @@ public class StubOutput implements Output {
     public String getLastMessage() {
         return this.messages.get(this.messages.size() - 1);
     }
+
+    public boolean containsMessage(String message) {
+        return this.messages.contains(message);
+    }
 }
